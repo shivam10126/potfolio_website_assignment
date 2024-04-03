@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.custom-img-animation {
+    --c: rgb(22 163 74); /* the border color */
+    --b: 4px;    /* the border thickness*/
+    --g: 10px;     /* the gap on hover */
+  
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%, var(--c) 0;
+    background: 
+      conic-gradient(from 180deg at top    var(--b) right var(--b), var(--_g))
+       var(--_i, 200%) 0  / 200% var(--_i, var(--b))  no-repeat,
+      conic-gradient(at bottom var(--b) left  var(--b), var(--_g))
+       0   var(--_i, 200%) / var(--_i, var(--b)) 200%  no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
   }
+  
+  .custom-img-animation:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+  }
+*{
+  font-family: "Noto Sans", sans-serif;
+}
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+.Noto-Sans {
+  font-family: "Noto Sans", sans-serif;
+}
+.Merriweather {
+  font-family: "Merriweather", serif;
+}
+.Monsieur {
+  font-family: "Monsieur La Doulaise", cursive;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* *{
+  outline: 2px solid black;
+} */
+
+body {
+  overflow-x: hidden !important;
+}
+.box-shadow{
+  box-shadow: 3px -5px rgb(30, 211, 96);
+}
+
+.underline-animation::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: -4px;
+  left: 0;
+  background-color: rgb(30, 211, 96);
+  transform: scaleX(0.1);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+.underline-active::after {
+  animation: grow 0.8s ease-in forwards ;
+}
+.ant-slider-disabled .ant-slider-rail {
+  background-color: rgb(238 246 241) !important;
+}
+.ant-slider.ant-slider-disabled .ant-slider-track {
+  background-color: rgb(98 254 155) !important;
+}
+.ant-collapse>.ant-collapse-item >.ant-collapse-header{
+background-color: rgb(38, 149, 78);
+width: 96%;
+margin-inline: auto;
+margin-top: 10px;
+border-radius: 12px 12px 0px 0px;
+}
+.ant-collapse .ant-collapse-content {
+width: 96% !important;
+margin-inline: auto !important;
+}
+.ant-collapse>.ant-collapse-item >.ant-collapse-header .ant-collapse-arrow {
   color: white;
+  font-size: 20px;
+  transform: translateY(30px);
 }
 
-.App-link {
-  color: #61dafb;
+
+@keyframes grow {
+  0%{ transform: scaleX(0.3);}
+  100%{ transform: scaleX(0.7);}
+}
+.project:hover > img{
+  transform: scale(1.2);
+}
+.scroll:hover > img{
+  transform: scale(1.2) !important;
+}
+.ant-modal .ant-modal-content{
+  padding: 0px;
+padding-inline: 12px !important;
+}
+.ant-modal .ant-modal-title{
+background-color: rgb(30, 211, 96);
+border-bottom: 4px solid rgb(180, 255, 185);
+box-shadow: 0 0 12px rgba(0,0,0,.09);
+width: 108.5%;
+transform: translateX(-11.6px);
+border-radius: 6px 6px 0px 0px;
+padding: 5px 12px;
+color: white;
+}
+.ant-modal .ant-modal-close {
+    position: absolute;
+    top: 3px;
+    color: white;
+}
+:where(.css-dev-only-do-not-override-11xg00t).ant-btn-primary {
+  color: #fff;
+  font-family: "Noto Sans", sans-serif !important;
+  background: rgb(30, 211, 96);
+  box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+}
+@media (min-width: 640px) {
+  .ant-modal .ant-modal-title{
+
+    width: 105.5% !important;
+;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.service:hover img{
+transform: scale(1.2);
+transition: all 0.3s;
+}
+.ant-card .ant-card-body{
+  padding: 0;
+}
+.ant-input-outlined:hover {
+  background-color: transparent;
+  border-color: rgb(30, 211, 96);
+}
+.ant-input-outlined  {
+  background-color: transparent;
+  border-color: rgb(30, 211, 96);
+}
+.ant-input-outlined:focus, :where(.css-dev-only-do-not-override-11xg00t).ant-input-outlined:focus-within {
+  background-color: transparent;
+  border-color: rgb(30, 211, 96);
+}
+:where(.css-dev-only-do-not-override-11xg00t).ant-input-affix-wrapper >input.ant-input{
+  color: white !important;
 }
