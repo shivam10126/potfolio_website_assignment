@@ -17,7 +17,7 @@ const Hero = ({info}) => {
       </div>
       <div className={` ${active && 'box-shadow'} transition-all duration-20050 text-center capitalize text-white bg-green-700 w-fit mx-auto px-4 py-2 rounded-full my-3 
        text-lg Noto-Sans `} onMouseEnter={()=>{setActive(true)}} onMouseLeave={()=>{setActive(false)}}>
-       <a href={'#'}> hire me !! <ArrowRightOutlined className={`${active && 'animate-arrow'} delay-100`} /></a>
+       <a> hire me !! <ArrowRightOutlined className={`${active && 'animate-arrow'} delay-100`} /></a>
        </div>
        <div className="flex sm:text-3xl flex-row gap-x-3 justify-center text-2xl">
           <a href={info.social_handles[0].url} className="hover:text-green-400"><InstagramOutlined /></a>
